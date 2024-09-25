@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Vowels</title>
+</head>
+{% load static %}
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="{% static 'remove_vowels_app/css/style.css' %}">
+<body>
+
+    <h1>Remove Vowels from a String</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="text">Enter a string:</label>
+        <input type="text" name="text" id="text">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
